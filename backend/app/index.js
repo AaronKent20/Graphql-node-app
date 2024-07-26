@@ -1,5 +1,5 @@
 import './apollo_index.js'
-
+import './src/models/index.js'
 import http from 'https'
 import dotenv from 'dotenv'
 dotenv.config()

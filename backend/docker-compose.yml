@@ -31,5 +31,15 @@ services:
     stdin_open: true
     tty: true
 
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - postgresdb
+    ports:
+      - "5555:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+    restart: unless-stopped
 volumes:
   db:

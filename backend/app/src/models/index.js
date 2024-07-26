@@ -1,6 +1,6 @@
-const dbConfig = require("../config/db.config.js");
+import {dbConfig} from "../config/db.config.js"
 
-const Sequelize = require("sequelize");
+import { Sequelize, DataTypes } from "sequelize";
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
@@ -14,3 +14,16 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     idle: dbConfig.pool.idle
   }
 });
+
+const Post = sequelize.define('posts',
+  {
+    title: {
+      type: DataTypes.STRING,
+    },
+    order: {
+      type: DataTypes.INTEGER
+    }
+  },  {
+    freezeTableName: true,
+  },
+);
