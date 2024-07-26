@@ -1,0 +1,19 @@
+{
+  "name": "graphql-node-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@apollo/client": "^3.11.1",
+    "@apollo/server": "^4.10.5",
+    "dotenv": "^10.0.0",
+    "graphql": "^16.9.0"
+  }
+}
