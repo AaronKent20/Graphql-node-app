@@ -15,7 +15,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   }
 });
 
-const Post = sequelize.define('posts',
+const Post = sequelize.define('Post',
   {
     title: {
       type: DataTypes.STRING,
@@ -27,3 +27,10 @@ const Post = sequelize.define('posts',
     freezeTableName: true,
   },
 );
+
+sequelize.sync().then(()=> {
+  console.log("Model Synced")
+})
+
+export { Post }
+
