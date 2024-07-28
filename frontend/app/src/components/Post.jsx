@@ -26,9 +26,7 @@ export const Post = ({ post }) => {
   const [{ opacity }, drop] = useDrop(
     () => ({
       accept: "card",
-      drop: () => {
-        console.log("E");
-      },
+      drop: () => {},
       collect: (monitor) => ({
         opacity: monitor.isOver() ? 0.5 : 1,
         isOver: !!monitor.isOver(),
