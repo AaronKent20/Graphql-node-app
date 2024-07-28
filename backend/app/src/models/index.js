@@ -1,4 +1,5 @@
 import {dbConfig} from "../config/db.config.js"
+import { LoremIpsum } from "lorem-ipsum";
 
 import { Sequelize, DataTypes } from "sequelize";
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
@@ -21,7 +22,7 @@ const Post = sequelize.define('Post',
       type: DataTypes.STRING,
     },
     order: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
     }
   },  {
     freezeTableName: true,
@@ -30,6 +31,23 @@ const Post = sequelize.define('Post',
 
 sequelize.sync().then(()=> {
   console.log("Model Synced")
+})
+
+const seedData = ((count)=> {
+  const lorem = new LoremIpsum({
+    sentencesPerParagraph: {
+      max: 8,
+      min: 4
+    },
+    wordsPerSentence: {
+      max: 16,
+      min: 4
+    }
+  }); 
+
+  for(let i = 0; i < count; i++)
+    Post.create({title: lorem.generateWords(7), order: i})
+
 })
 
 export { Post }
