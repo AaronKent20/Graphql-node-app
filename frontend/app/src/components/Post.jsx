@@ -27,7 +27,7 @@ export const Post = ({ post }) => {
 
   const [reorderPost, { data, loading, error }] = useMutation(REORDER_POST);
 
-  const [{}, drag] = useDrag(
+  const [, drag] = useDrag(
     () => ({
       type: "card",
       item: post,

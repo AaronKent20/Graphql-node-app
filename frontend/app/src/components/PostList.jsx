@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Post } from "./Post";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql, useSubscription } from "@apollo/client";
 import { useDndScrolling } from "react-dnd-scrolling";
 
 const GET_LOCATIONS = gql`
@@ -14,8 +14,19 @@ const GET_LOCATIONS = gql`
   }
 `;
 
+const ORDER_CHANGED = gql`
+  subscription orderChanged {
+    orderChanged
+  }
+`;
+
 export const PostList = () => {
-  const { loading, error, data } = useQuery(GET_LOCATIONS);
+  const { loading, error, data, refetch } = useQuery(GET_LOCATIONS);
+
+  const subObject = useSubscription(ORDER_CHANGED);
+  useEffect(() => {
+    refetch();
+  }, [subObject, refetch]);
 
   const ref = useRef();
   useDndScrolling(ref, { strengthMultiplier: 10 });
