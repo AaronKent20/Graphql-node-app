@@ -46,7 +46,7 @@ const seedData = ((count)=> {
   }); 
 
   for(let i = 0; i < count; i++)
-    Post.create({title: lorem.generateWords(7), order: i})
+    Post.create({title: lorem.generateWords(7), order: i+1})
 
 })
 

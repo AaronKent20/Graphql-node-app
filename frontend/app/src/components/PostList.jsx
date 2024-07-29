@@ -7,6 +7,7 @@ import { useDndScrolling } from "react-dnd-scrolling";
 const GET_LOCATIONS = gql`
   query getPosts {
     posts {
+      id
       title
       order
     }
