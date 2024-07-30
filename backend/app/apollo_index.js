@@ -114,7 +114,7 @@ const server = new ApolloServer({
 
 const corsOptions = {
   credentials: true,
-  origin: ['http://graphql-node-backend.onrender.com', 'http://graphql-node-backend.onrender.com'] // Whitelist the domains you want to allow
+  origin: ['https://graphql-node-backend.onrender.com', 'https://graphql-node-app.onrender.com'] // Whitelist the domains you want to allow
 };
 
 await server.start();
