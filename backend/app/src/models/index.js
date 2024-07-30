@@ -5,7 +5,6 @@ import { Sequelize, DataTypes } from "sequelize";
 
 let sequelize;
 
-
 if (process.env.DB_URL) {
   sequelize = new Sequelize(process.env.DB_URL);
 } else {
