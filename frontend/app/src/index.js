@@ -17,7 +17,7 @@ const httpLink = new HttpLink({
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: 'ws://graphql-node-backend.onrender.com/graphql',
+    url: 'wss://graphql-node-backend.onrender.com/graphql',
   }),
 );
 
