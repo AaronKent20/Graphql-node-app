@@ -15,8 +15,6 @@ import bodyParser from 'body-parser';
 
 const pubsub = new PubSub();
 
-
-
 const typeDefs = `#graphql
   type Post {
     id: Int
@@ -116,7 +114,7 @@ const server = new ApolloServer({
 
 const corsOptions = {
   credentials: true,
-  origin: ['https://graphql-node-backend.onrender.com', 'https://graphql-node-app.onrender.com', 'http://localhost:3000'] // Whitelist the domains you want to allow
+  origin: ['https://graphql-node-backend.onrender.com', 'https://graphql-node-app.onrender.com'] // Whitelist the domains you want to allow
 };
 
 await server.start();
