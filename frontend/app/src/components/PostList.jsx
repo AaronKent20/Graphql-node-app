@@ -35,12 +35,12 @@ export const PostList = () => {
   if (error) return <p>Error : {error.message}</p>;
 
   return (
-    <Container maxWidth="sm">
+    <div style={{ padding: "30px" }}>
       <Stack gap={3} ref={ref} direction="column" justifyContent="center" alignItems="flex-start" padding={"30px"}>
         {data.posts.map((post) => {
           return <Post post={post} key={post.id} />;
         })}
       </Stack>
-    </Container>
+    </div>
   );
 };
