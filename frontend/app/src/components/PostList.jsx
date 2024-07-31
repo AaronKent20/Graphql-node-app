@@ -34,11 +34,10 @@ export const PostList = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
 
-  console.log(data.posts.length);
   return (
     <Stack gap={3} ref={ref}>
       {data.posts.map((post) => {
-        return <Post post={post} key={post.title} />;
+        return <Post post={post} key={post.id} />;
       })}
     </Stack>
   );
