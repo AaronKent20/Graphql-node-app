@@ -1,3 +1,6 @@
+import { Post } from './src/models/index.js';
+import { Op } from 'sequelize';
+
 export const resolvers = {
     Query: {
       async posts () { 
