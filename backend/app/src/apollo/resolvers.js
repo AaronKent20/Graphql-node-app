@@ -1,4 +1,4 @@
-import { Post } from './src/models/index.js';
+import { Post } from '../models/index.js';
 import { Op } from 'sequelize';
 
 export const resolvers = {
