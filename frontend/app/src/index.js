@@ -12,12 +12,12 @@ import { split, HttpLink } from '@apollo/client';
 import { getMainDefinition } from '@apollo/client/utilities';
 
 const httpLink = new HttpLink({
-  uri: 'https://graphql-node-backend.onrender.com/graphql',
+  uri: 'http://localhost:4000/graphql',
 });
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: 'wss://graphql-node-backend.onrender.com/graphql',
+    url: 'ws://localhost:4000/graphql',
   }),
 );
 
