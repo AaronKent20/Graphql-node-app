@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Stack, Container } from "@mui/material";
 import { useEffect, useRef } from "react";
 import { Post } from "./Post";
 import { useQuery, gql, useSubscription } from "@apollo/client";
