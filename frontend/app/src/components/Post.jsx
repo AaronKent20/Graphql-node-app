@@ -54,9 +54,9 @@ export const Post = ({ post }) => {
   drag(drop(ref));
 
   return (
-    <div ref={ref} style={{ opacity }}>
+    <div ref={ref} style={{ opacity, maxWidth: "80%", alignSelf: "center" }}>
       <Card variant="outlined">
-        <PostTitle>{post.title}</PostTitle>
+        <PostTitle>Title: {post.title}</PostTitle>
       </Card>
     </div>
   );
