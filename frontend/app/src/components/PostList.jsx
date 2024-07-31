@@ -35,7 +35,7 @@ export const PostList = () => {
   if (error) return <p>Error : {error.message}</p>;
 
   return (
-    <Stack gap={3} ref={ref}>
+    <Stack gap={3} ref={ref} direction="column" justifyContent="center" alignItems="flex-start">
       {data.posts.map((post) => {
         return <Post post={post} key={post.id} />;
       })}
