@@ -2,7 +2,7 @@ import { Post } from '../models/index.js';
 import { Op } from 'sequelize';
 import { PubSub } from 'graphql-subscriptions';
 
-const pubsub = new PubSub();
+
 export const resolvers = {
     Query: {
       async posts () { 
