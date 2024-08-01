@@ -15,4 +15,3 @@ To run locally use docker compose up to run the required containers and access t
 ## Assumptions / Design Decisions
 
 - I Did a refetch once updated goes through in anticipation of pagination / infinite scroll, depending on the size of the list / data, a frontend local copy of the reordered list could be saved and then sent as an array of records to update
--
